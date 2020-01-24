@@ -31,13 +31,13 @@ requeteXHR = function(route, dataPost, action){
     var reqXhr = new XMLHttpRequest();
     var data = dataPost;
     reqXhr.onload = function(){action(reqXhr.responseText, reqXhr.status)};
-    reqXhr.error = function(){action(reqXhr.responseText, reqXhr.status)};
-    reqXhr.abort = function(){action(reqXhr.responseText, reqXhr.status)};
+    reqXhr.onerror = function(){action(reqXhr.responseText, reqXhr.status)};
+    reqXhr.onabort = function(){action(reqXhr.responseText, reqXhr.status)};
     reqXhr.open("POST", route);
     reqXhr.send(data);
 }
 
-returnSendMsg = function(responseXhr, responseStatus){
+returnSendMsg = function(responseXhr = null , responseStatus = null){
     $('#btn_send').popover('dispose')
     try {
         if (responseXhr != null && responseStatus == 200) {
