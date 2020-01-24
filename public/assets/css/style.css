@@ -1,17 +1,28 @@
 @font-face {
-    font-family: FredokaOne;
-    src: url("../fonts/Press_Start_2P/FredokaOne-Regular.ttf") format('truetype');
+    font-family: Audiowide;
+    src: url("../fonts/Audiowide/Audiowide-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+ }
+ @font-face {
+    font-family: Aldrich;
+    src: url("../fonts/Aldrich/Aldrich-Regular.ttf") format('truetype');
     font-weight: normal;
     font-style: normal;
  }
 
 body {
+    font-family: Aldrich, monospace;
     background-color: #000000FF;
     background-attachment: fixed;
     background-position: center;
     background-image: url("../img/bg.jpg");
 }
-
+@media (min-width: 992px) {
+    body {
+        background-image: url("../img/bg_lg.jpg");
+    }
+}
 /***
  *     █████╗  ██████╗ ██████╗██╗   ██╗███████╗██╗██╗     
  *    ██╔══██╗██╔════╝██╔════╝██║   ██║██╔════╝██║██║     
@@ -23,15 +34,24 @@ body {
  */
 #top {
     width: 100%;
-    height: 64rem;
     background-size: 100%;
-    background-image: url("../img/fond_top.jpg");
-    margin-bottom: -45rem;
     animation-name: anim-fond;
     animation-duration: 10s;
     animation-timing-function: ease-in-out;
     animation-direction: alternate;
     animation-iteration-count: infinite;
+/* Propriétés affectées par le media queries */
+    height: 40rem;
+    margin-bottom: -40rem;
+    background-image: url("../img/fond_top.jpg");
+}
+/* Media queries correspondant au breakpoint lg dans BootStrap */
+@media (min-width: 992px) {
+    #top {
+        height: 64rem;
+        margin-bottom: -50rem;
+        background-image: url("../img/fond_top_lg.jpg");
+    }
 }
 @keyframes anim-fond {
     0% {
@@ -47,25 +67,48 @@ body {
 .navbar-brand img {
     height: 3.2rem;
     border-radius: 50%;
-    box-shadow: 0 0 2px 2px #FFFFFFBB, 0 0 8px 8px #0000FFBB;
+    box-shadow: 0 0 3px 3px #0000FFFF;
 }
 .navbar-brand:hover img {
-    box-shadow: 0 0 2px 2px #FFFFFFFF, 0 0 8px 8px #0000FFFF;
+    box-shadow: 0 0 6px 6px #0000FFBB, 0 0 3px 3px #FFFFFFFF;
 }
 .nav-link {
-    font-family: FredokaOne, cursive;
-    font-size: 1.6rem;
-    color: #FFFFFF88;
-    text-shadow: -4px -4px 4px #0000FFBB, 4px -4px 4px #0000FFBB, -4px 4px 4px #0000FFBB, 4px 4px 4px #0000FFBB;
+    font-family: Audiowide, monospace;
+    font-size: 1.2rem;
+    text-transform: uppercase;
 }
-.nav-link:hover {
-    color: #FFFFFFCC;
+.blue-shadow {
+    color: #FFFFFFFF;
     text-shadow: -4px -4px 4px #0000FFFF, 4px -4px 4px #0000FFFF, -4px 4px 4px #0000FFFF, 4px 4px 4px #0000FFFF;
 }
+.blue-shadow:hover {
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: -8px -8px 8px #0000FFBB, 8px -8px 8px #0000FFBB, -8px 8px 8px #0000FFBB, 8px 8px 8px #0000FFBB,
+                 -4px -4px 4px #FFFFFFFF, 4px -4px 4px #FFFFFFFF, -4px 4px 4px #FFFFFFFF, 4px 4px 4px #FFFFFFFF;
+}
 header {
-    height: 40rem;
+    height: 30rem;
+}
+@media (min-width: 992px) {
+    header {
+        height: 40rem;
+    }
+}
+.black-shadow {
+    color: #FFFFFFFF;
+    text-shadow: -4px -4px 4px #000000FF, 4px -4px 4px #000000FF, -4px 4px 4px #000000FF, 4px 4px 4px #000000FF;
+}
+a.black-shadow:hover {
+    color: #FFFFFFFF;
+    text-decoration: none;
+    text-shadow: -8px -8px 8px #000000BB, 8px -8px 8px #000000BB, -8px 8px 8px #000000BB, 8px 8px 8px #000000BB,
+                 -4px -4px 4px #FFFFFFFF, 4px -4px 4px #FFFFFFFF, -4px 4px 4px #FFFFFFFF, 4px 4px 4px #FFFFFFFF;
 }
 
+main {
+    margin-top: 5rem;
+}
 /***
  *    ███████╗███████╗ ██████╗████████╗██╗ ██████╗ ███╗   ██╗███████╗
  *    ██╔════╝██╔════╝██╔════╝╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝
@@ -147,6 +190,9 @@ section {
 }
 .form-control, .form-control:focus, button[type="submit"] {
     background-color: #00000077;
+}
+.popover, .popover-header {
+    background-color: #000000DD;
 }
 
 footer {

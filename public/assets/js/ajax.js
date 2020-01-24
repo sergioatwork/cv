@@ -1,4 +1,21 @@
-console.log("Début chargement ajax.js");
+var pop_send = {
+    content : '<div class="spinner-border text-primary" role="status"></div>',
+    html: true,
+    placement : 'top', 
+    template : '<div class="popover border-primary mb-4" role="tooltip"><div class="popover-body"></div></div>'
+    };
+var pop_success = {
+    content : '<h6 class="text-success text-center m-0">Message envoyé avec succès.</h6>',
+    html: true,
+    placement : 'top', 
+    template : '<div class="popover border-success mb-4" role="tooltip"><div class="popover-body"></div></div>'
+    };
+var pop_error = {
+    content : '<h6 class="text-danger text-center m-0">Une erreur s\'est produite lors de l\'envoi de votre message.<br>Merci de réessayer.</h6>',
+    html: true,
+    placement : 'top', 
+    template : '<div class="popover border-danger mb-4" role="tooltip"><div class="popover-body"></div></div>'
+    };
 
 /***
  *     █████╗      ██╗ █████╗ ██╗  ██╗
@@ -10,93 +27,41 @@ console.log("Début chargement ajax.js");
  *                                    
  */
 
-function requeteXHR(route, dataPost, action){
-    let reqXhr = new XMLHttpRequest();
-    let data = dataPost;
-    reqXhr.open('POST', "../back/public/"+route);
-    reqXhr.addEventListener('load', function(){action(reqXhr.responseText)});
+requeteXHR = function(route, dataPost, action){
+    var reqXhr = new XMLHttpRequest();
+    var data = dataPost;
+    reqXhr.onload = function(){action(reqXhr.responseText, reqXhr.status)};
+    reqXhr.error = function(){action(reqXhr.responseText, reqXhr.status)};
+    reqXhr.abort = function(){action(reqXhr.responseText, reqXhr.status)};
+    reqXhr.open("POST", route);
     reqXhr.send(data);
 }
 
-// afficherAccueil = function(retourXhr){
-//     let film = JSON.parse(retourXhr);
-//     contenuListeFilm = "";
-//     for (let numFilm in film){
-//         contenuListeFilm += "<article class='accueil'>"
-//                         + "<h2>" + film[numFilm].titre + "</h2>"
-//                         + "<p>Genre : " + film[numFilm].genre
-//                         + " - Année de sortie : " + (new Date(film[numFilm].dateDeSortie)).getFullYear() + "</p>"
-//                         + "<img src='assets/img/film/" + film[numFilm].affiche + "' />"
-//                         + "</article>";
-//     }
-//     let listeFilm = document.getElementById("listeFilm");
-//     listeFilm.className = "col-lg-8  offset-lg-2";
-//     listeFilm.innerHTML = contenuListeFilm;
-// }
+returnSendMsg = function(responseXhr, responseStatus){
+    $('#btn_send').popover('dispose')
+    try {
+        if (responseXhr != null && responseStatus == 200) {
+            var resultSendMsg = JSON.parse(responseXhr);
+            if (resultSendMsg.statusMail) {
+                $('#btn_send').popover(pop_success);
+                $('#btn_send').popover('show');
+            } else {
+                throw true;
+            }
+        } else {
+            throw true;
+        }
+    } catch(error) {
+        $('#btn_send').popover(pop_error);
+        $('#btn_send').popover('show');
+    }
+    setTimeout(function(){$('#btn_send').popover('dispose')}, 3000);
+}
 
-// afficherListeFilm = function(retourXhr){
-//     let film = JSON.parse(retourXhr);
-//     contenuListeFilm = "";
-//     for (let numFilm in film){
-//         contenuListeFilm += "<article class='listeFilm'>"
-//                         + "<h2>" + film[numFilm].titre + "</h2>"
-//                         + "<p>Genre : " + film[numFilm].genre + "</p>"
-//                         + "<p>Année de sortie : " + (new Date(film[numFilm].dateDeSortie)).getFullYear() + "</p>"
-//                         + "<img src='assets/img/film/" + film[numFilm].affiche + "' />"
-//                         + "</article>";
-//     }
-//     let listeFilm = document.getElementById("listeFilm");
-//     listeFilm.className = "col-lg-8  offset-lg-2";
-//     listeFilm.innerHTML = contenuListeFilm;
-// }
 
-// login = function(retourXhr){
-//     console.log(retourXhr);
-//     let retourLogin = JSON.parse(retourXhr);
-//     if (retourLogin.authentification){
-//         document.getElementById("popup-login").style.display = "none";
-//     }else{
-//         document.getElementById("erreur-login").innerHTML = "Dans l'cul Lulu...";
-//     }
-// }
-
-// let routeSymfony = "";
-// let donneesFormulaire = new FormData();
-// donneesFormulaire.append('nom', 'Toto');
-// donneesFormulaire.append('age', '12');
-
-// document.getElementById("btn-accueil").addEventListener("click", function(){
-//     requeteXHR(routeSymfony, donneesFormulaire, afficherAccueil)});
-
-// document.getElementById("btn-listeFilm").addEventListener("click", function(){
-//     requeteXHR(routeSymfony, donneesFormulaire, afficherListeFilm)});
-
-// document.getElementById("btn-login").addEventListener("click", function(){
-//     document.getElementById("popup-login").style.display = "block";});
-
-// document.getElementById("btn-login-cancel").addEventListener("click", function(){
-//     document.getElementById("popup-login").style.display = "none";});
-    
-// document.getElementById("btn-login-submit").addEventListener("click", function(evenement){
-//     evenement.preventDefault();
-//     let donneesFormulaire = new FormData(document.getElementById("form-login"));
-//     requeteXHR("login", donneesFormulaire, login);});
-
-// document.getElementById("btn-logout").addEventListener("click", function(){
-//     requeteXHR("", donneesFormulaire, afficherAccueil)});
-
-// requeteXHR(routeSymfony, donneesFormulaire, afficherAccueil);
-
-let home = document.querySelector("#home-toggle");
-
-let btnHome = document.querySelectorAll(".btn-home-toggle");
-
-btnHome.forEach(function(btn){
-    btn.addEventListener("click", function(evenement){
-        evenement.preventDefault();
-        if (home.getAttribute("checked")){home.removeAttribute("checked");}
-        else {home.setAttribute("checked", "checked");}
-        console.log("Toggle Home : "+home.getAttribute("checked"));
-    });
-});
-console.log("Fin chargement ajax.js");
+document.querySelector("#btn_send").addEventListener("click", function(event){
+    event.preventDefault();
+    var dataForm = new FormData(document.querySelector("#form_send_msg"));
+    $('#btn_send').popover(pop_send);
+    $('#btn_send').popover('show');
+    requeteXHR("backend.php", dataForm, returnSendMsg)}); // voir si l'on peut mettre des valeurs par défaut du type returnSendMsg(null, null)
