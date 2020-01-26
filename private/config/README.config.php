@@ -2,7 +2,7 @@
 
 //// Initialisation des erraurs
 error_reporting(E_ALL);
-ini_set("display_errors", TRUE);
+ini_set("display_errors", TRUE); //// Mettre à FALSE en prod.
 ini_set('log_errors', TRUE);
 ini_set('error_log', '../private/errors.log');
 
