@@ -25,4 +25,12 @@ spl_autoload_register("autoloadClass");
 
 $form = $_REQUEST["form"] ?? '';
 
-require_once("../private/controller/sendMail.php");
+switch ($form) {
+    case 'form_send_msg':
+        require_once("../private/controller/sendMail.php");
+        break;
+    
+    default:
+        echo("Le traitement du formulaire demandé n'existe pas !!!");
+        break;
+}

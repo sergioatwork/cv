@@ -1,0 +1,142 @@
+[14-Nov-2020 17:19:27 Europe/Berlin] ***
+[14-Nov-2020 17:19:27 Europe/Berlin] *
+[14-Nov-2020 17:19:27 Europe/Berlin] *    ██╗      ██████╗  ██████╗    Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+[14-Nov-2020 17:19:27 Europe/Berlin] *    ██║     ██╔═══██╗██╔════╝    ::1
+[14-Nov-2020 17:19:27 Europe/Berlin] *    ██║     ██║   ██║██║  ███╗   54056
+[14-Nov-2020 17:19:27 Europe/Berlin] *    ██║     ██║   ██║██║   ██║   POST
+[14-Nov-2020 17:19:27 Europe/Berlin] *    ███████╗╚██████╔╝╚██████╔╝   /cv/public/backend.php
+[14-Nov-2020 17:19:27 Europe/Berlin] *    ╚══════╝ ╚═════╝  ╚═════╝    Saturday 14th of November 2020 05:19:27 PM
+[14-Nov-2020 17:19:27 Europe/Berlin] *                                 
+[14-Nov-2020 17:19:27 Europe/Berlin] ***
+[14-Nov-2020 17:19:27 Europe/Berlin] SERVER -> CLIENT: 220 kundenserver.de (mreue011) Nemesis ESMTP Service ready
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: EHLO localhost
+
+[14-Nov-2020 17:19:27 Europe/Berlin] SERVER -> CLIENT: 250-kundenserver.de Hello localhost [86.77.51.230]
+250-8BITMIME
+250-AUTH LOGIN PLAIN
+250-SIZE 140000000
+250 STARTTLS
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: STARTTLS
+
+[14-Nov-2020 17:19:27 Europe/Berlin] SERVER -> CLIENT: 220 OK
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: EHLO localhost
+
+[14-Nov-2020 17:19:27 Europe/Berlin] SERVER -> CLIENT: 250-kundenserver.de Hello localhost [86.77.51.230]
+250-8BITMIME
+250-AUTH LOGIN PLAIN
+250 SIZE 140000000
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: AUTH LOGIN
+
+[14-Nov-2020 17:19:27 Europe/Berlin] SERVER -> CLIENT: 334 VXNlcm5hbWU6
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: [credentials hidden]
+[14-Nov-2020 17:19:27 Europe/Berlin] SERVER -> CLIENT: 334 UGFzc3dvcmQ6
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: [credentials hidden]
+[14-Nov-2020 17:19:27 Europe/Berlin] SERVER -> CLIENT: 235 Authentication succeeded
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: MAIL FROM:<cv@sergio-webdev.com>
+
+[14-Nov-2020 17:19:27 Europe/Berlin] SERVER -> CLIENT: 250 Requested mail action okay, completed
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: RCPT TO:<cv@sergio-webdev.com>
+
+[14-Nov-2020 17:19:27 Europe/Berlin] SERVER -> CLIENT: 250 OK
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: DATA
+
+[14-Nov-2020 17:19:27 Europe/Berlin] SERVER -> CLIENT: 354 Start mail input; end with <CRLF>.<CRLF>
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: Date: Sat, 14 Nov 2020 17:19:27 +0100
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: To: cv@sergio-webdev.com
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: From: CV en ligne Serge Beldjaoui <cv@sergio-webdev.com>
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: Subject: [CV en ligne Serge Beldjaoui]
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: Message-ID: <HLbnnscQchwlWU0gJl4cdQuqKLuOYiBtcMQ26Ng70c@localhost>
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: X-Mailer: PHPMailer 6.1.4 (https://github.com/PHPMailer/PHPMailer)
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: MIME-Version: 1.0
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: Content-Type: multipart/alternative;
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER:  boundary="b1_HLbnnscQchwlWU0gJl4cdQuqKLuOYiBtcMQ26Ng70c"
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: Content-Transfer-Encoding: 8bit
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: 
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: This is a multi-part message in MIME format.
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: --b1_HLbnnscQchwlWU0gJl4cdQuqKLuOYiBtcMQ26Ng70c
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: Content-Type: text/plain; charset=us-ascii
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: 
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: Contact : toto.bibi@gogo.com\ntiti
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: 
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: --b1_HLbnnscQchwlWU0gJl4cdQuqKLuOYiBtcMQ26Ng70c
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: Content-Type: text/html; charset=us-ascii
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: 
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: <h3>Contact : toto.bibi@gogo.com</h3><p>titi</p>
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: 
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: 
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: --b1_HLbnnscQchwlWU0gJl4cdQuqKLuOYiBtcMQ26Ng70c--
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: 
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: .
+
+[14-Nov-2020 17:19:27 Europe/Berlin] SERVER -> CLIENT: 250 Requested mail action okay, completed: id=1Md6dH-1k5jRt27Qh-00aGfq
+
+[14-Nov-2020 17:19:27 Europe/Berlin] CLIENT -> SERVER: QUIT
+
+[14-Nov-2020 17:19:27 Europe/Berlin] SERVER -> CLIENT: 221 kundenserver.de Service closing transmission channel
+
+[14-Nov-2020 17:20:49 Europe/Berlin] ***
+[14-Nov-2020 17:20:49 Europe/Berlin] *
+[14-Nov-2020 17:20:49 Europe/Berlin] *    ██╗      ██████╗  ██████╗    Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+[14-Nov-2020 17:20:49 Europe/Berlin] *    ██║     ██╔═══██╗██╔════╝    ::1
+[14-Nov-2020 17:20:49 Europe/Berlin] *    ██║     ██║   ██║██║  ███╗   54072
+[14-Nov-2020 17:20:49 Europe/Berlin] *    ██║     ██║   ██║██║   ██║   GET
+[14-Nov-2020 17:20:49 Europe/Berlin] *    ███████╗╚██████╔╝╚██████╔╝   /cv/public/backend.php?form=TOTO
+[14-Nov-2020 17:20:49 Europe/Berlin] *    ╚══════╝ ╚═════╝  ╚═════╝    Saturday 14th of November 2020 05:20:49 PM
+[14-Nov-2020 17:20:49 Europe/Berlin] *                                 
+[14-Nov-2020 17:20:49 Europe/Berlin] ***
+[14-Nov-2020 17:21:23 Europe/Berlin] ***
+[14-Nov-2020 17:21:23 Europe/Berlin] *
+[14-Nov-2020 17:21:23 Europe/Berlin] *    ██╗      ██████╗  ██████╗    Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+[14-Nov-2020 17:21:23 Europe/Berlin] *    ██║     ██╔═══██╗██╔════╝    ::1
+[14-Nov-2020 17:21:23 Europe/Berlin] *    ██║     ██║   ██║██║  ███╗   54074
+[14-Nov-2020 17:21:23 Europe/Berlin] *    ██║     ██║   ██║██║   ██║   GET
+[14-Nov-2020 17:21:23 Europe/Berlin] *    ███████╗╚██████╔╝╚██████╔╝   /cv/public/backend.php?form=form_send_msg
+[14-Nov-2020 17:21:23 Europe/Berlin] *    ╚══════╝ ╚═════╝  ╚═════╝    Saturday 14th of November 2020 05:21:23 PM
+[14-Nov-2020 17:21:23 Europe/Berlin] *                                 
+[14-Nov-2020 17:21:23 Europe/Berlin] ***
+[14-Nov-2020 17:21:23 Europe/Berlin] PHP : Adresse email non valide.
+[14-Nov-2020 17:21:48 Europe/Berlin] ***
+[14-Nov-2020 17:21:48 Europe/Berlin] *
+[14-Nov-2020 17:21:48 Europe/Berlin] *    ██╗      ██████╗  ██████╗    Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0
+[14-Nov-2020 17:21:48 Europe/Berlin] *    ██║     ██╔═══██╗██╔════╝    ::1
+[14-Nov-2020 17:21:48 Europe/Berlin] *    ██║     ██║   ██║██║  ███╗   54078
+[14-Nov-2020 17:21:48 Europe/Berlin] *    ██║     ██║   ██║██║   ██║   GET
+[14-Nov-2020 17:21:48 Europe/Berlin] *    ███████╗╚██████╔╝╚██████╔╝   /cv/public/backend.php
+[14-Nov-2020 17:21:48 Europe/Berlin] *    ╚══════╝ ╚═════╝  ╚═════╝    Saturday 14th of November 2020 05:21:48 PM
+[14-Nov-2020 17:21:48 Europe/Berlin] *                                 
+[14-Nov-2020 17:21:48 Europe/Berlin] ***
